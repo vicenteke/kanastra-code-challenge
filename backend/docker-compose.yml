@@ -1,0 +1,18 @@
+services:
+  kanastra_api:
+    build: .
+    container_name: ${APP_CONTAINER_NAME}
+    environment:
+      PORT: 8000
+    env_file: .env
+    ports:
+      - ${APP_PORT}:8000
+    volumes:
+      - ./:/kanastra/
+      - ./uploads:${CSV_UPLOAD_FOLDER}
+    networks:
+      - kanastra_network
+networks:
+  kanastra_network:
+    name: kanastra_network
+    external: false

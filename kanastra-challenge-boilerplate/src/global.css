@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+@layer utilities   {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-slate-50;
+    font-family: "Inter", sans-serif;
+  }
+
+  .animated-background {
+    background-size: 400%;
+
+    -webkit-animation: animation 60s ease-in infinite 5s;
+    -moz-animation: animation 60s ease-in infinite 5s;
+    animation: animation 60s ease-in infinite 5s;
+  }
+
+  @keyframes animation {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    
+    50% {
+        background-position: 100% 50%;
+    }
+  }
+}
